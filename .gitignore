@@ -1,0 +1,50 @@
+# WordPress core files (ignore if WordPress is installed separately)
+wp-admin/
+wp-includes/
+
+# Ignore sensitive config files
+wp-config.php
+wp-config-sample.php
+.env
+.env.local
+.env.*.local
+
+# Ignore user uploads and generated content
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/upgrade/
+wp-content/debug.log
+
+# Ignore dependency files
+node_modules/
+vendor/
+dist/
+composer.lock
+package-lock.json
+yarn.lock
+
+# Ignore Docker-related files
+docker-compose.override.yml
+docker-compose.yml
+db_data/
+wp_data/
+logs/
+*.sql
+*.sql.gz
+*.tar
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Ignore compiled assets (if applicable)
+*.map
