@@ -1,7 +1,3 @@
-@use 'headings';
-
-@use 'copy';
-
 @font-face {
   font-family: 'Gotham Regular';
   src: url('fonts/Gotham-Book.otf') format('opentype');
@@ -24,30 +20,4 @@ optgroup,
 textarea {
   font-size: 1em;
   font-family: 'Gotham Regular', sans-serif;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.section-title,
-.form-section-title {
-  text-align: center;
-}
-
-.large {
-  font-size: 2em;
-}
-
-p {
-  line-height: 1.25em;
-}
-
-.page-content {
-  &.large {
-    font-size: 1.25em;
-    font-family: 'Gotham Bold', sans-serif;
-    line-height: 1.75em;
-    padding: 20px 0;
-  }
 }
