@@ -1,0 +1,47 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package imaginelandscape
+ */
+
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="icon" href="<?php bloginfo('template_url'); ?>/images/copytec-icon.png" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" rel="preload"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
+	<div class="site">
+		<div class="wrapper-container">
+			<header class="site-header">
+				<div class="top-container container">
+					<div class="logo-container">
+						<a class="site-logo" href="<?php echo home_url(); ?>">
+							<img class="hide-on-mobile" src="<?php bloginfo('template_url'); ?>/images/copytec-logo.svg"
+								alt="site logo" />
+						</a>
+						<a class="mobile-nav-trigger"><span></span></a>
+					</div>
+					<div class="cta-container">
+						<a class="cta teal" href="/get-a-quote">Get a quote</a>
+					</div>
+				</div>
+
+				<?php include "inc/main-navigation.php"; ?>
+				<?php include "inc/mobile-navigation.php"; ?>
+
+			</header>

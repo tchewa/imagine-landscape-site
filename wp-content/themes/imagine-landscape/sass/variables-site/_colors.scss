@@ -1,0 +1,37 @@
+:root {
+  --lime-green: #dedd38;
+  --plum: #994170;
+  --teal: #5bc7d4;
+  --light-gray: #e3e3e3;
+  --form-gray: #f7f7f7;
+  --gray: #8e8f8f;
+  --darkgray: #3a3639;
+  --white: #fff;
+  --semi-transparent-white: rgba(255, 255, 255, 0.9);
+  --not-black: #151515;
+  --black: #000;
+}
+
+.bg-teal {
+  background-color: var(--teal);
+}
+
+.bg-lime-green {
+  background-color: var(--lime-green);
+}
+
+.bg-purple {
+  background-color: var(--plum);
+
+  span {
+    color: var(--white);
+  }
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-dark-gray {
+  background-color: var(--darkgray);
+}
