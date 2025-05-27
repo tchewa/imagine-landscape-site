@@ -1,23 +1,45 @@
-@font-face {
-  font-family: 'Gotham Regular';
-  src: url('fonts/Gotham-Book.otf') format('opentype');
+.oswald-bold {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+
+.oswald-regular {
+  font-family: 'Oswald', sans-serif;
   font-weight: 400;
-  font-style: normal;
 }
 
-@font-face {
-  font-family: 'Gotham Bold';
-  src: url('fonts/Gotham-Bold.otf') format('opentype');
-  font-weight: 800;
+body {
+  font-size: 1em;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
   font-style: normal;
+  font-weight: 400;
 }
 
-body,
 button,
+a,
 input,
 select,
-optgroup,
 textarea {
   font-size: 1em;
-  font-family: 'Gotham Regular', sans-serif;
+  font-optical-sizing: auto;
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
 }

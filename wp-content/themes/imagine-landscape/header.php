@@ -20,14 +20,22 @@
 	<link rel="icon" href="<?php bloginfo('template_url'); ?>/images/il-icon.png" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" rel="preload"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap"
+		rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div class="site">
-		<div class="wrapper-container">
-			<header class="site-header">
+
+		<header class="site-header">
+			<div class="wrapper-container">
 				<?php include "inc/main-navigation.php"; ?>
 				<?php include "inc/mobile-navigation.php"; ?>
-			</header>
+			</div>
+		</header>

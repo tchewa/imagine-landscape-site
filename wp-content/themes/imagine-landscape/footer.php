@@ -12,9 +12,14 @@
 ?>
 
 <footer class="site-footer">
+	<div class="wrapper-container">
+
+	</div>
 </footer>
 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/site.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/navigation.js"></script>
+
 </body>
 
 </html>

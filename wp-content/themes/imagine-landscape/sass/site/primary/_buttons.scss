@@ -1,0 +1,61 @@
+button {
+  width: 175px;
+  height: 65px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    width: 125px;
+    font-size: 18px;
+    height: 50px;
+  }
+
+  &.primary {
+    background-color: var(--primary-green);
+
+    &:hover {
+      background-color: var(--charcoal);
+      color: var(--primary-green);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--charcoal);
+    color: var(--primary-green);
+
+    &:hover {
+      background-color: var(--primary-green);
+      color: var(--charcoal);
+      border: 5px solid var(--charcoal);
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 5px solid var(--primary-green);
+
+    &:hover {
+      color: var(--charcoal);
+    }
+
+    &.white-hover {
+      &:hover {
+        background-color: var(--white);
+      }
+    }
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    color: var(--charcoal);
+    border: 5px solid var(--primary-green);
+
+    &:hover {
+      border: 5px solid var(--charcoal);
+    }
+  }
+}
