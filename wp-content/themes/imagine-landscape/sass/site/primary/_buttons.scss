@@ -23,23 +23,25 @@ button {
   }
 
   &.secondary {
-    background-color: var(--charcoal);
-    color: var(--primary-green);
-
-    &:hover {
-      background-color: var(--primary-green);
-      color: var(--charcoal);
-      border: 5px solid var(--charcoal);
-    }
-  }
-
-  &.outline {
     background-color: transparent;
     color: var(--primary-green);
     border: 5px solid var(--primary-green);
 
     &:hover {
+      background-color: var(--white);
       color: var(--charcoal);
+      border: 5px solid var(--primary-green);
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: var(--charcoal);
+    border: 5px solid var(--primary-green);
+
+    &:hover {
+      color: var(--charcoal);
+      border: 5px solid var(--charcoal);
     }
 
     &.white-hover {

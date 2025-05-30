@@ -409,6 +409,11 @@ a:hover {
   text-align: center;
 }
 
+.heading-big {
+  font-size: 52px;
+  font-family: "Oswald", sans-serif;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -645,6 +650,19 @@ body {
   padding: 10px 20px 10px 20px;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
 /*--------------------------------------------------------------
 ## Buttons
 --------------------------------------------------------------*/
@@ -672,21 +690,23 @@ button.primary:hover {
   color: var(--primary-green);
 }
 button.secondary {
-  background-color: var(--charcoal);
-  color: var(--primary-green);
-}
-button.secondary:hover {
-  background-color: var(--primary-green);
-  color: var(--charcoal);
-  border: 5px solid var(--charcoal);
-}
-button.outline {
   background-color: transparent;
   color: var(--primary-green);
   border: 5px solid var(--primary-green);
 }
+button.secondary:hover {
+  background-color: var(--white);
+  color: var(--charcoal);
+  border: 5px solid var(--primary-green);
+}
+button.outline {
+  background-color: transparent;
+  color: var(--charcoal);
+  border: 5px solid var(--primary-green);
+}
 button.outline:hover {
   color: var(--charcoal);
+  border: 5px solid var(--charcoal);
 }
 button.outline.white-hover:hover {
   background-color: var(--white);
@@ -725,6 +745,65 @@ button.tertiary:hover {
 }
 
 /*--------------------------------------------------------------
+# CTA
+--------------------------------------------------------------*/
+.cta-logo-bg-dark,
+.cta-logo-bg-light {
+  padding: 40px 20px;
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (max-width: 767px) {
+  .cta-logo-bg-dark,
+  .cta-logo-bg-light {
+    padding: 20px;
+  }
+}
+.cta-logo-bg-dark span,
+.cta-logo-bg-light span {
+  font-size: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .cta-logo-bg-dark span,
+  .cta-logo-bg-light span {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .cta-logo-bg-dark span,
+  .cta-logo-bg-light span {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.cta-logo-bg-dark span {
+  color: var(--white);
+}
+
+.cta-logo-bg-light span {
+  color: var(--charcoal);
+}
+
+.simple-cta {
+  background-color: var(--charcoal);
+  padding: 40px 20px;
+}
+@media screen and (max-width: 1024px) {
+  .simple-cta {
+    padding: 30px 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .simple-cta {
+    padding: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -737,10 +816,6 @@ button.tertiary:hover {
   color: var(--primary-green);
   font-family: "Oswald", sans-serif;
   font-size: 22px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 @media screen and (max-width: 1024px) {
   .site-footer {

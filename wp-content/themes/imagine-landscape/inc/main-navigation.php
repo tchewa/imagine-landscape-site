@@ -16,7 +16,7 @@
 			?>
 		</div>
 		<div class="cta">
-			<a href="/contact-us"><button class="outline white-hover">Contact Us</button></a>
+			<a href="/contact-us"><button class="secondary">Contact Us</button></a>
 		</div>
 	</div>
 </nav>

@@ -6,5 +6,7 @@
 </div>
 
 <?php
+get_template_part('template-parts/cta');
+get_template_part('template-parts/simple-cta');
 get_footer();
 ?>

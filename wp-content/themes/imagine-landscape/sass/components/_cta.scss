@@ -1,0 +1,51 @@
+.cta-logo-bg-dark,
+.cta-logo-bg-light {
+  padding: 40px 20px;
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+  }
+
+  span {
+    font-size: 48px;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.cta-logo-bg-dark {
+  span {
+    color: var(--white);
+  }
+}
+
+.cta-logo-bg-light {
+  span {
+    color: var(--charcoal);
+  }
+}
+
+.simple-cta {
+  background-color: var(--charcoal);
+  padding: 40px 20px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 30px 20px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+  }
+}
