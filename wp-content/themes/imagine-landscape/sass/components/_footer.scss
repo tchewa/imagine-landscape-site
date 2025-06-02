@@ -66,9 +66,39 @@
       color: var(--primary-green);
       gap: 20px;
       padding: 0;
+      align-items: flex-start;
 
       li {
         list-style-type: none;
+        position: relative;
+      }
+
+      a {
+        @media screen and (min-width: 640px) {
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-green);
+            transform: translateX(-50%);
+            transition: width 0.2s ease;
+          }
+
+          &:hover {
+            @media screen and (min-width: 768px) {
+              color: var(--primary-green);
+            }
+
+            @media screen and (min-width: 640px) {
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -147,16 +177,75 @@
     text-decoration: none;
     max-width: 40px;
 
+    &.desktop-link {
+      img:not(.show-on-hover) {
+        display: block;
+        transition: opacity 0.2s ease;
+        opacity: 1;
+      }
+
+      .show-on-hover {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        position: absolute; // ensures overlap
+        top: 0;
+        left: 0;
+      }
+
+      position: relative; // for absolute positioning of .show-on-hover
+
+      &:hover {
+        img:not(.show-on-hover) {
+          opacity: 0;
+        }
+        .show-on-hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    a {
+      color: var(--primary-green);
+      font-size: 22px;
+      text-decoration: none;
+      max-width: 40px;
+
+      &.desktop-link {
+        img:not(.show-on-hover) {
+          display: block;
+          transition: opacity 0.3s ease;
+          opacity: 1;
+        }
+
+        .show-on-hover {
+          display: block;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          position: absolute; // ensures overlap
+          top: 0;
+          left: 0;
+        }
+
+        position: relative; // for absolute positioning of .show-on-hover
+
+        &:hover {
+          img:not(.show-on-hover) {
+            opacity: 0;
+          }
+          .show-on-hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
     @media screen and (max-width: 1024px) {
       max-width: 30px;
     }
 
     @media screen and (max-width: 767px) {
       max-width: 20px;
-    }
-
-    &:hover {
-      color: var(--primary-yellow);
     }
   }
 }

@@ -45,6 +45,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --primary-green: #84d900;
   --charcoal: #2d2d2d;
   --white: #fff;
+  --gray: #acacac;
 }
 
 /*--------------------------------------------------------------
@@ -414,6 +415,44 @@ a:hover {
   font-family: "Oswald", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 52px;
+}
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+}
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -652,6 +691,9 @@ body {
 
 .flex {
   display: flex;
+}
+
+.flex-column {
   flex-direction: column;
 }
 
@@ -684,6 +726,7 @@ button {
 }
 button.primary {
   background-color: var(--primary-green);
+  color: var(--charcoal);
 }
 button.primary:hover {
   background-color: var(--charcoal);
@@ -742,6 +785,7 @@ button.tertiary:hover {
 .site-header {
   background-color: var(--charcoal);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+  position: relative;
 }
 
 /*--------------------------------------------------------------
@@ -789,8 +833,13 @@ button.tertiary:hover {
 }
 
 .simple-cta {
-  background-color: var(--charcoal);
   padding: 40px 20px;
+}
+.simple-cta.bg-dark {
+  background-color: var(--charcoal);
+}
+.simple-cta.bg-light {
+  background-color: var(--white);
 }
 @media screen and (max-width: 1024px) {
   .simple-cta {
@@ -803,6 +852,136 @@ button.tertiary:hover {
   }
 }
 
+/*--------------------------------------------------------------
+# Hero
+--------------------------------------------------------------*/
+.hero {
+  text-align: center;
+}
+.hero.green-bg {
+  background-color: var(--primary-green);
+}
+.hero.green-bg .divider-line {
+  background-color: var(--charcoal);
+}
+.hero.green-bg h1 span {
+  color: var(--white);
+}
+.hero.gray-bg {
+  background-color: var(--gray);
+  color: var(--white);
+}
+.hero.gray-bg .divider-line {
+  background-color: var(--white);
+}
+.hero.gray-bg h1 span {
+  color: var(--primary-green);
+}
+.hero .divider-line {
+  height: 3px;
+  max-width: 500px;
+  width: 500px;
+  margin: 0 auto;
+  display: block;
+}
+@media (max-width: 1024px) {
+  .hero .divider-line {
+    width: calc(65vw - 20px);
+    max-width: 100%;
+  }
+}
+.hero h1 {
+  margin: 0;
+}
+.hero h1 span {
+  text-shadow: 0 4px 4px rgba(32, 32, 32, 0.56);
+}
+.hero .wrapper-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 60px 20px;
+}
+.hero .subheadline {
+  font-size: 32px;
+  font-family: "Inter", sans-serif;
+}
+@media screen and (max-width: 1024px) {
+  .hero .subheadline {
+    font-size: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# SBS
+--------------------------------------------------------------*/
+.side-by-side {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+@media screen and (max-width: 767px) {
+  .side-by-side {
+    padding: 20px 0;
+  }
+}
+.side-by-side .wrapper-container {
+  gap: 20px;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .side-by-side .wrapper-container {
+    flex-direction: column;
+  }
+}
+
+.sbs-image {
+  flex: 1;
+  max-width: 50%;
+}
+@media (max-width: 767px) {
+  .sbs-image {
+    max-width: 100%;
+  }
+}
+.sbs-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.sbs-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 0 20px;
+}
+@media screen and (max-width: 767px) {
+  .sbs-content {
+    padding: 0;
+  }
+}
+
+.sbs-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.sbs-copy {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 767px) {
+  .side-by-side {
+    flex-direction: column;
+  }
+  .sbs-image,
+  .sbs-content {
+    max-width: 100%;
+  }
+}
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -867,9 +1046,34 @@ button.tertiary:hover {
   color: var(--primary-green);
   gap: 20px;
   padding: 0;
+  align-items: flex-start;
 }
 .site-footer .footer-links ul li {
   list-style-type: none;
+  position: relative;
+}
+@media screen and (min-width: 640px) {
+  .site-footer .footer-links ul a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-green);
+    transform: translateX(-50%);
+    transition: width 0.2s ease;
+  }
+}
+@media screen and (min-width: 640px) and (min-width: 768px) {
+  .site-footer .footer-links ul a:hover {
+    color: var(--primary-green);
+  }
+}
+@media screen and (min-width: 640px) and (min-width: 640px) {
+  .site-footer .footer-links ul a:hover::after {
+    width: 100%;
+  }
 }
 .site-footer .footer-logo {
   max-width: 200px;
@@ -942,6 +1146,56 @@ button.tertiary:hover {
   text-decoration: none;
   max-width: 40px;
 }
+.social-media-links a.desktop-link {
+  position: relative;
+}
+.social-media-links a.desktop-link img:not(.show-on-hover) {
+  display: block;
+  transition: opacity 0.2s ease;
+  opacity: 1;
+}
+.social-media-links a.desktop-link .show-on-hover {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.social-media-links a.desktop-link:hover img:not(.show-on-hover) {
+  opacity: 0;
+}
+.social-media-links a.desktop-link:hover .show-on-hover {
+  opacity: 1;
+}
+.social-media-links a a {
+  color: var(--primary-green);
+  font-size: 22px;
+  text-decoration: none;
+  max-width: 40px;
+}
+.social-media-links a a.desktop-link {
+  position: relative;
+}
+.social-media-links a a.desktop-link img:not(.show-on-hover) {
+  display: block;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.social-media-links a a.desktop-link .show-on-hover {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.social-media-links a a.desktop-link:hover img:not(.show-on-hover) {
+  opacity: 0;
+}
+.social-media-links a a.desktop-link:hover .show-on-hover {
+  opacity: 1;
+}
 @media screen and (max-width: 1024px) {
   .social-media-links a {
     max-width: 30px;
@@ -951,7 +1205,4 @@ button.tertiary:hover {
   .social-media-links a {
     max-width: 20px;
   }
-}
-.social-media-links a:hover {
-  color: var(--primary-yellow);
 }

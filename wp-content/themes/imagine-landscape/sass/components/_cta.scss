@@ -38,7 +38,14 @@
 }
 
 .simple-cta {
-  background-color: var(--charcoal);
+  &.bg-dark {
+    background-color: var(--charcoal);
+  }
+
+  &.bg-light {
+    background-color: var(--white);
+  }
+
   padding: 40px 20px;
 
   @media screen and (max-width: 1024px) {

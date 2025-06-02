@@ -26,16 +26,24 @@
 						?>
 					</div>
 					<div class="social-media-links">
-						<a href="">
+						<a class="desktop-link" href="">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-instagram-green.png"
 								alt="instagram Logo">
+							<img class="show-on-hover"
+								src="<?php echo get_template_directory_uri(); ?>/images/icons/il-instagram-white.png"
+								alt="instagram Logo">
 						</a>
-						<a href="">
+						<a class="desktop-link" href="">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-facebook-green.png"
 								alt="facebook Logo">
+							<img class="show-on-hover"
+								src="<?php echo get_template_directory_uri(); ?>/images/icons/il-facebook-white.png"
+								alt="facebook Logo">
 						</a>
-						<a href="">
+						<a class="desktop-link" href="">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-yelp-green.png" alt="yelp Logo">
+							<img class="show-on-hover"
+								src="<?php echo get_template_directory_uri(); ?>/images/icons/il-yelp-white.png" alt="yelp Logo">
 						</a>
 					</div>
 				</div>

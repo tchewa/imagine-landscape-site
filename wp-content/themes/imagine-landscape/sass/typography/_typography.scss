@@ -48,3 +48,37 @@ a {
   font-size: 52px;
   font-family: 'Oswald', sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 52px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+  }
+}
