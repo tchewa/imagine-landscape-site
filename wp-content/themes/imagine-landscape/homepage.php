@@ -1,23 +1,29 @@
-<?php /* Template Name: Home Page */ get_header();
-
-$radio_value = get_field('hero_color_option');
+<?php
+/* Template Name: Home Page */
+get_header();
 ?>
-<div class="container">
-	<div class="hero <?php if ($radio_value === 'Green') {
-		echo 'green-bg';
-	} else {
-		echo 'gray-bg';
-	} ?>">
-		<div class="wrapper-container">
-			<?php echo get_field('headline') ?>
-			<span class="divider-line"></span>
-			<span class="subheadline"><?php echo get_field('subheadline'); ?></span>
-		</div>
-	</div>
-</div>
 
 <?php
-get_template_part('template-parts/sbs');
-get_template_part('template-parts/cta');
+// Check if the flexible content field has rows
+if (have_rows('flexible_content')):
+	// Loop through the rows of flexible content
+	while (have_rows('flexible_content')):
+		the_row();
+		if (get_row_layout() == 'hero'):
+			get_template_part('template-parts/hero');
+		elseif (get_row_layout() == 'sbs'):
+			get_template_part('template-parts/sbs');
+		elseif (get_row_layout() == 'cta'):
+			get_template_part('template-parts/cta');
+		elseif (get_row_layout() == 'feature'):
+			get_template_part('template-parts/feature');
+		elseif (get_row_layout() == 'testimonial'):
+			get_template_part('template-parts/testimonial');
+		endif;
+	endwhile;
+endif;
+?>
+
+<?php
 get_footer();
 ?>

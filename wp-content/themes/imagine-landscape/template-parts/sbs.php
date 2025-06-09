@@ -1,11 +1,11 @@
 <?php
-$sbs_image = get_field('sbs_image');
-$sbs_title = get_field('sbs_title');
-$sbs_copy = get_field('sbs_copy');
-$sbs_cta_text = get_field('sbs_cta_text');
-$sbs_cta_link = get_field('sbs_cta_link');
+$sbs_image = get_sub_field('sbs_image');
+$sbs_title = get_sub_field('sbs_title');
+$sbs_copy = get_sub_field('sbs_copy');
+$sbs_cta_text = get_sub_field('sbs_cta_text');
+$sbs_cta_link = get_sub_field('sbs_cta_link');
 
-if ($sbs_image || $sbs_title || $sbs_copy) { ?>
+if ($sbs_image || $sbs_title || $sbs_copy): ?>
 	<div class="side-by-side container flex">
 		<div class="wrapper-container">
 			<div class="sbs-image">
@@ -21,12 +21,14 @@ if ($sbs_image || $sbs_title || $sbs_copy) { ?>
 				<?php if ($sbs_copy): ?>
 					<div class="sbs-copy"><?php echo wp_kses_post($sbs_copy); ?></div>
 				<?php endif; ?>
-				<?php if ($sbs_cta_text): ?>
+				<?php if ($sbs_cta_text && $sbs_cta_link): ?>
 					<div class="sbs-cta">
-						<a href="/<?php get_field('sbs-cta-link') ?>"><button class="primary"><?php echo $sbs_cta_text ?></button></a>
+						<a href="<?php echo esc_url($sbs_cta_link); ?>">
+							<button class="primary"><?php echo esc_html($sbs_cta_text); ?></button>
+						</a>
 					</div>
 				<?php endif; ?>
 			</div>
 		</div>
 	</div>
-<?php } ?>
+<?php endif; ?>

@@ -212,6 +212,8 @@
       max-width: 40px;
 
       &.desktop-link {
+        position: relative;
+
         img:not(.show-on-hover) {
           display: block;
           transition: opacity 0.3s ease;
@@ -222,12 +224,10 @@
           display: block;
           opacity: 0;
           transition: opacity 0.3s ease;
-          position: absolute; // ensures overlap
+          position: absolute;
           top: 0;
           left: 0;
         }
-
-        position: relative; // for absolute positioning of .show-on-hover
 
         &:hover {
           img:not(.show-on-hover) {

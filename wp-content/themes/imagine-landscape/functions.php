@@ -179,13 +179,13 @@ if (defined('JETPACK__VERSION')) {
 
 function remove_comments_from_admin_menu()
 {
-	remove_menu_page('edit-comments.php'); // Removes the Comments menu item
+	remove_menu_page('edit-comments.php');
 }
 add_action('admin_menu', 'remove_comments_from_admin_menu');
 
 function disable_comments_support()
 {
-	// Disable support for comments and trackbacks in post types
+
 	$post_types = get_post_types();
 	foreach ($post_types as $post_type) {
 		remove_post_type_support($post_type, 'comments');
@@ -197,19 +197,19 @@ add_action('init', 'disable_comments_support');
 function remove_comments_from_admin_bar()
 {
 	global $wp_admin_bar;
-	$wp_admin_bar->remove_node('comments'); // Removes the Comments item from the admin bar
+	$wp_admin_bar->remove_node('comments');
 }
 add_action('wp_before_admin_bar_render', 'remove_comments_from_admin_bar');
 
 function remove_posts_from_admin_menu()
 {
-	remove_menu_page('edit.php'); // Removes the Posts menu item
+	remove_menu_page('edit.php');
 }
 add_action('admin_menu', 'remove_posts_from_admin_menu');
 
 function remove_posts_from_admin_bar()
 {
 	global $wp_admin_bar;
-	$wp_admin_bar->remove_node('new-post'); // Removes the "New Post" option from the admin bar
+	$wp_admin_bar->remove_node('new-post');
 }
 add_action('wp_before_admin_bar_render', 'remove_posts_from_admin_bar');
