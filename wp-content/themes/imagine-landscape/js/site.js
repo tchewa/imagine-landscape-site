@@ -26,3 +26,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init position
   updateSlider();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.faq-question').forEach((item) => {
+    item.addEventListener('click', () => {
+      const answer = document.getElementById(
+        'faq-' + item.getAttribute('data-faq-id')
+      );
+      const toggle = item.querySelector('.faq-toggle');
+      answer.classList.toggle('active');
+      toggle.classList.toggle('active');
+
+      document.querySelectorAll('.faq-answer').forEach((otherAnswer) => {
+        if (
+          otherAnswer !== answer &&
+          otherAnswer.classList.contains('active')
+        ) {
+          otherAnswer.classList.remove('active');
+          otherAnswer.previousElementSibling
+            .querySelector('.faq-toggle')
+            .classList.remove('active');
+        }
+      });
+    });
+  });
+
+  document.querySelector('.faq-open-all').addEventListener('click', () => {
+    document.querySelectorAll('.faq-answer').forEach((answer) => {
+      answer.classList.add('active');
+    });
+    document.querySelectorAll('.faq-toggle').forEach((toggle) => {
+      toggle.classList.add('active');
+    });
+  });
+
+  document.querySelector('.faq-close-all').addEventListener('click', () => {
+    document.querySelectorAll('.faq-answer').forEach((answer) => {
+      answer.classList.remove('active');
+    });
+    document.querySelectorAll('.faq-toggle').forEach((toggle) => {
+      toggle.classList.remove('active');
+    });
+  });
+});

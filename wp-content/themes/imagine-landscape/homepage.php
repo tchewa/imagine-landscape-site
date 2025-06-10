@@ -4,9 +4,7 @@ get_header();
 ?>
 
 <?php
-// Check if the flexible content field has rows
 if (have_rows('flexible_content')):
-	// Loop through the rows of flexible content
 	while (have_rows('flexible_content')):
 		the_row();
 		if (get_row_layout() == 'hero'):
@@ -19,6 +17,8 @@ if (have_rows('flexible_content')):
 			get_template_part('template-parts/feature');
 		elseif (get_row_layout() == 'testimonial'):
 			get_template_part('template-parts/testimonial');
+		elseif (get_row_layout() == 'faq'):
+			get_template_part('template-parts/faq');
 		endif;
 	endwhile;
 endif;

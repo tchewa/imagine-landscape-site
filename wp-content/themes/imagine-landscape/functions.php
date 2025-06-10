@@ -213,3 +213,10 @@ function remove_posts_from_admin_bar()
 	$wp_admin_bar->remove_node('new-post');
 }
 add_action('wp_before_admin_bar_render', 'remove_posts_from_admin_bar');
+
+function mytheme_remove_appearance_menu()
+{
+	// Remove the entire Appearance menu
+	remove_menu_page('themes.php');
+}
+add_action('admin_menu', 'mytheme_remove_appearance_menu', 999);
