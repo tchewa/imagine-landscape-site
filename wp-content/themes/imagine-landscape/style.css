@@ -422,7 +422,8 @@ h4,
 h5,
 h6 {
   font-family: "Oswald", sans-serif;
-  font-weight: normal;
+  font-weight: bold;
+  margin: 0;
 }
 
 h1 {
@@ -455,6 +456,20 @@ h3 {
   h3 {
     font-size: 18px;
   }
+}
+
+h4 {
+  font-size: 22px;
+}
+@media screen and (max-width: 1024px) {
+  h4 {
+    font-size: 18px;
+  }
+}
+
+.page-title {
+  margin: 0;
+  padding: 35px 0;
 }
 
 /*--------------------------------------------------------------
@@ -568,7 +583,7 @@ h3 {
   left: 0;
   right: 0;
   display: none;
-  top: 90px;
+  top: 80px;
   z-index: 2;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.61);
   padding-left: 20px;
@@ -694,7 +709,7 @@ body {
 .wrapper-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px 10px 20px;
+  padding: 0 20px 10px 20px;
 }
 
 .flex {
@@ -1081,42 +1096,19 @@ blockquote {
 .faq-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-}
-
-.faq-controls {
-  margin-bottom: 40px;
-}
-
-.faq-open-all,
-.faq-close-all {
-  padding: 10px;
-  background-color: var(--primary-green);
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-right: 10px;
-  transition: background-color 0.3s;
-}
-
-.faq-open-all,
-.faq-close-all {
-  font-family: "Oswald", sans-serif;
-  font-weight: bold;
-}
-.faq-open-all:hover,
-.faq-close-all:hover {
-  background-color: var(--charcoal);
-  color: var(--primary-green);
+  margin-top: 40px;
 }
 
 .faq-item {
-  margin-bottom: 10px;
   flex: 1 1 100%;
+  border-bottom: 2px solid var(--charcoal);
+}
+.faq-item:last-child {
+  border-bottom: none;
 }
 
 .faq-question {
-  padding: 15px;
+  padding: 30px 30px 30px 20px;
   cursor: pointer;
   font-weight: bold;
   display: flex;
@@ -1124,9 +1116,46 @@ blockquote {
   align-items: center;
   transition: background 0.3s;
 }
-
-.faq-question:hover {
-  background: #e0e0e0;
+@media screen and (min-width: 767px) {
+  .faq-question:hover {
+    background: var(--charcoal);
+    color: var(--primary-green);
+  }
+  .faq-question:hover .faq-toggle::after {
+    border-top: 2px solid var(--primary-green);
+    border-right: 2px solid var(--primary-green);
+  }
+}
+@media screen and (max-width: 767px) {
+  .faq-question {
+    padding: 20px 0 20px;
+  }
+}
+.faq-question h3 {
+  font-size: 2.2rem;
+}
+@media screen and (max-width: 1024px) {
+  .faq-question h3 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .faq-question h3 {
+    font-size: 1.2rem;
+  }
+}
+.faq-question h4 {
+  font-size: 2rem;
+}
+@media screen and (max-width: 1024px) {
+  .faq-question h4 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .faq-question h4 {
+    font-size: 1rem;
+  }
 }
 
 .faq-answer {
@@ -1134,7 +1163,6 @@ blockquote {
   background: #fff;
   line-height: 1.6;
 }
-
 .faq-answer.active {
   display: block;
 }
@@ -1151,18 +1179,26 @@ blockquote {
   max-height: 400px;
   object-fit: cover;
   object-position: top;
+  display: block;
 }
 .faq-answer-complex .faq-answer-text {
   padding: 0 20px;
 }
 
 .faq-toggle {
-  font-size: 1.2em;
-  transition: transform 0.3s;
+  display: flex;
 }
-
+.faq-toggle::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--charcoal);
+  border-right: 2px solid var(--charcoal);
+  transform: rotate(135deg);
+}
 .faq-toggle.active {
-  transform: rotate(45deg);
+  transform: rotate(-180deg);
 }
 
 .faq-item:nth-child(odd) .complex-image {
@@ -1288,6 +1324,11 @@ blockquote {
   gap: 10px;
   padding: 60px 20px;
 }
+@media screen and (max-width: 767px) {
+  .hero .wrapper-container {
+    padding: 30px;
+  }
+}
 .hero .subheadline {
   font-size: 32px;
   font-family: "Inter", sans-serif;
@@ -1304,16 +1345,28 @@ blockquote {
 .side-by-side {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 30px 0;
 }
 @media screen and (max-width: 767px) {
   .side-by-side {
     padding: 20px 0;
   }
 }
+.side-by-side.padding-collapse {
+  padding: 10px 0 30px;
+}
+.side-by-side.padding-collapse .wrapper-container {
+  padding: 0px;
+}
+@media screen and (max-width: 767px) {
+  .side-by-side.padding-collapse {
+    padding: 10px 0 20px;
+  }
+}
 .side-by-side .wrapper-container {
   gap: 20px;
   display: flex;
+  padding: 0 20px;
 }
 @media screen and (max-width: 767px) {
   .side-by-side .wrapper-container {

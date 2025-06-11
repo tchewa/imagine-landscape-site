@@ -1,7 +1,3 @@
-<div class="faq-controls">
-	<span class="faq-open-all">Open All</span>
-	<span class="faq-close-all">Close All</span>
-</div>
 <div class="faq-container">
 	<?php if (have_rows('faq_item')):
 		while (have_rows('faq_item')):
@@ -14,7 +10,7 @@
 			?>
 			<div class="faq-item">
 				<div class="faq-question" data-faq-id="<?php echo sanitize_title($question); ?>">
-					<?php echo esc_html($question); ?> <span class="faq-toggle">+</span>
+					<?php echo $question; ?> <span class="faq-toggle"></span>
 				</div>
 				<div class="faq-answer" id="faq-<?php echo sanitize_title($question); ?>">
 					<?php if ($simple_answer): ?>

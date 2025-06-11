@@ -5,7 +5,7 @@ get_header();
 
 <div class="container">
 	<div class="wrapper-container">
-		<h1 class="oswald-bold text-center">The Process</h1>
+		<h1 class="oswald-bold text-center page-title">The Process</h1>
 
 		<?php
 		if (have_rows('flexible_content')):

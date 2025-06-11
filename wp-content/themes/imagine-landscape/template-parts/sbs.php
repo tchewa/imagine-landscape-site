@@ -4,9 +4,12 @@ $sbs_title = get_sub_field('sbs_title');
 $sbs_copy = get_sub_field('sbs_copy');
 $sbs_cta_text = get_sub_field('sbs_cta_text');
 $sbs_cta_link = get_sub_field('sbs_cta_link');
+$sbs_padding_collapse = get_sub_field('sbs_padding_collapse'); // true/false field
+
+$padding_class = $sbs_padding_collapse ? 'padding-collapse' : '';
 
 if ($sbs_image || $sbs_title || $sbs_copy): ?>
-	<div class="side-by-side container flex">
+	<div class="side-by-side container flex <?php echo esc_attr($padding_class); ?>">
 		<div class="wrapper-container">
 			<div class="sbs-image">
 				<?php if ($sbs_image): ?>

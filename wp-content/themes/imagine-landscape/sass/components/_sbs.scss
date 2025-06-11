@@ -1,15 +1,28 @@
 .side-by-side {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 30px 0;
 
   @media screen and (max-width: 767px) {
     padding: 20px 0;
   }
 
+  &.padding-collapse {
+    padding: 10px 0 30px;
+
+    .wrapper-container {
+      padding: 0px;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 10px 0 20px;
+    }
+  }
+
   .wrapper-container {
     gap: 20px;
     display: flex;
+    padding: 0 20px;
 
     @media screen and (max-width: 767px) {
       flex-direction: column;

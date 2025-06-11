@@ -50,22 +50,4 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-
-  document.querySelector('.faq-open-all').addEventListener('click', () => {
-    document.querySelectorAll('.faq-answer').forEach((answer) => {
-      answer.classList.add('active');
-    });
-    document.querySelectorAll('.faq-toggle').forEach((toggle) => {
-      toggle.classList.add('active');
-    });
-  });
-
-  document.querySelector('.faq-close-all').addEventListener('click', () => {
-    document.querySelectorAll('.faq-answer').forEach((answer) => {
-      answer.classList.remove('active');
-    });
-    document.querySelectorAll('.faq-toggle').forEach((toggle) => {
-      toggle.classList.remove('active');
-    });
-  });
 });
