@@ -1,7 +1,7 @@
 .faq-container {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin: 40px 0 40px;
 }
 
 .faq-item {
@@ -38,6 +38,7 @@
 
   @media screen and (max-width: 767px) {
     padding: 20px 0 20px;
+    justify-content: flex-start;
   }
 
   h3 {
@@ -49,17 +50,22 @@
 
     @media screen and (max-width: 767px) {
       font-size: 1.2rem;
+      width: 15%;
     }
   }
 
   h4 {
     font-size: 2rem;
+    margin-left: 5px;
+
     @media screen and (max-width: 1024px) {
       font-size: 1.5rem;
     }
 
     @media screen and (max-width: 767px) {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      width: 80%;
+      padding: 0 10px 0 0;
     }
   }
 }
@@ -109,6 +115,10 @@
 
   &.active {
     transform: rotate(-180deg);
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 5%;
   }
 }
 

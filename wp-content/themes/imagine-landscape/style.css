@@ -1096,7 +1096,7 @@ blockquote {
 .faq-container {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin: 40px 0 40px;
 }
 
 .faq-item {
@@ -1129,6 +1129,7 @@ blockquote {
 @media screen and (max-width: 767px) {
   .faq-question {
     padding: 20px 0 20px;
+    justify-content: flex-start;
   }
 }
 .faq-question h3 {
@@ -1142,10 +1143,12 @@ blockquote {
 @media screen and (max-width: 767px) {
   .faq-question h3 {
     font-size: 1.2rem;
+    width: 15%;
   }
 }
 .faq-question h4 {
   font-size: 2rem;
+  margin-left: 5px;
 }
 @media screen and (max-width: 1024px) {
   .faq-question h4 {
@@ -1154,7 +1157,9 @@ blockquote {
 }
 @media screen and (max-width: 767px) {
   .faq-question h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    width: 80%;
+    padding: 0 10px 0 0;
   }
 }
 
@@ -1199,6 +1204,11 @@ blockquote {
 }
 .faq-toggle.active {
   transform: rotate(-180deg);
+}
+@media screen and (max-width: 767px) {
+  .faq-toggle {
+    width: 5%;
+  }
 }
 
 .faq-item:nth-child(odd) .complex-image {
