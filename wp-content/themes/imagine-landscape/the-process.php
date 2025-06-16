@@ -1,12 +1,12 @@
 <?php
 /* Template Name: The Process Page */
+remove_filter('the_content', 'wpautop');
 get_header();
 ?>
 
 <div class="container">
 	<div class="wrapper-container">
-		<h1 class="oswald-bold text-center page-title">The Process</h1>
-
+		<h1 class="text-center page-title">The Process</h1>
 		<?php
 		if (have_rows('flexible_content')):
 			while (have_rows('flexible_content')):

@@ -8,7 +8,6 @@
  *
  * @package imaginelandscape
  */
-
 ?>
 
 <footer class="site-footer">
@@ -107,12 +106,9 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
 </footer>
 
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/site.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/navigation.js"></script>
+<?php wp_footer(); ?>
 
 </body>
 

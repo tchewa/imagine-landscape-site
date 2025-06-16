@@ -41,6 +41,10 @@
 
 .member-bio {
   padding: 0 10px;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 5px;
+  }
 }
 
 /* Responsive adjustments */

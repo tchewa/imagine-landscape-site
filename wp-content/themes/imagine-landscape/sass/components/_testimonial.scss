@@ -1,6 +1,6 @@
 .testimonials {
   text-align: center;
-  background-color: #fff;
+  background-color: var(--gray);
   padding: 40px 20px;
 
   @media screen and (max-width: 767px) {
@@ -106,6 +106,7 @@ blockquote {
   font-weight: bold;
   font-size: 1rem;
   margin: 1rem 0;
+  line-height: 1.5em;
 }
 
 .testimonial-name {

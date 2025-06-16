@@ -8,8 +8,9 @@
   font-weight: 400;
 }
 
-body {
-  font-size: 1em;
+body,
+p {
+  font-size: 20px;
   font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -84,7 +85,7 @@ h3 {
   font-size: 28px;
 
   @media screen and (max-width: 1024px) {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 
@@ -99,4 +100,13 @@ h4 {
 .page-title {
   margin: 0;
   padding: 35px 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6em;
+
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
 }

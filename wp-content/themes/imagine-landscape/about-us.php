@@ -1,5 +1,6 @@
 <?php
 /* Template Name: About Us Page */
+remove_filter('the_content', 'wpautop');
 get_header();
 
 // Get full team image with fallback
@@ -11,7 +12,7 @@ $full_team_image_url = !empty($full_team_image['url'])
 
 <div class="container">
 	<div class="wrapper-container">
-		<h1 class="text-center oswald-bold page-title"><?php echo esc_html(get_the_title()); ?></h1>
+		<h1 class="text-center page-title collapse-padding-bottom">About Our Company</h1>
 		<?php
 		// Flexible Content for SBS
 		if (have_rows('flexible_content')): ?>
@@ -39,7 +40,9 @@ $full_team_image_url = !empty($full_team_image['url'])
 									alt="<?php echo esc_attr($member_image['alt'] ?: $member_name . ' Photo'); ?>" class="member-image">
 							<?php endif; ?>
 							<h3 class="oswald-bold"><?php echo esc_html($member_name); ?></h3>
-							<div class="member-bio"><?php echo wp_kses_post($member_bio); ?></div>
+							<div class="member-bio">
+								<p><?php echo wp_kses_post($member_bio); ?></p>
+							</div>
 						</div>
 					<?php endif; ?>
 				<?php endwhile; ?>

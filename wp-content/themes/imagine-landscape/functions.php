@@ -147,7 +147,7 @@ function imaginelandscape_scripts()
 	wp_enqueue_style('theme-style', get_stylesheet_uri());
 	wp_style_add_data('imaginelandscape-style', 'rtl', 'replace');
 
-	wp_enqueue_script('imaginelandscape-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('imaginelandscape-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -214,9 +214,35 @@ function remove_posts_from_admin_bar()
 }
 add_action('wp_before_admin_bar_render', 'remove_posts_from_admin_bar');
 
-function mytheme_remove_appearance_menu()
+function register_project_cpt()
 {
-	// Remove the entire Appearance menu
-	remove_menu_page('themes.php');
+	$labels = array(
+		'name' => 'Projects',
+		'singular_name' => 'Project',
+		'menu_name' => 'Projects',
+		'name_admin_bar' => 'Project',
+		'add_new' => 'Add Project',
+		'add_new_item' => 'Add New Project',
+		'new_item' => 'New Project',
+		'edit_item' => 'Edit Project',
+		'view_item' => 'View Project',
+		'all_items' => 'All Projects',
+		'search_items' => 'Search Projects',
+		'parent_item_colon' => 'Parent Projects:',
+		'not_found' => 'No projects found.',
+		'not_found_in_trash' => 'No projects found in Trash.',
+	);
+
+	register_post_type('project', array(
+		'labels' => $labels,
+		'public' => true,
+		'show_in_rest' => true,
+		'has_archive' => true,
+		'supports' => array('title', 'thumbnail', 'editor'),
+		'rewrite' => array('slug' => 'projects'),
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-format-gallery', // Optional icon
+	));
 }
-add_action('admin_menu', 'mytheme_remove_appearance_menu', 999);
+add_action('init', 'register_project_cpt');
+
