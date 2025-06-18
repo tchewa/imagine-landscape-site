@@ -1,0 +1,118 @@
+.project-grid {
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px 40px;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1024px) {
+      padding: 0 0 40px;
+    }
+
+    .project-item {
+      flex: 0 1 calc(33.333% - 20px);
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+
+      @media (max-width: 1024px) {
+        flex: 0 1 calc(33% - 20px);
+      }
+
+      @media (max-width: 767px) {
+        flex: 1 1 calc(50% - 20px);
+        min-width: auto;
+      }
+
+      .project-link {
+        display: block;
+
+        .project-thumb {
+          width: 100%;
+          height: 450px;
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            .project-hover {
+              opacity: 1;
+            }
+          }
+
+          @media screen and (max-width: 1024px) {
+            height: 350px;
+          }
+
+          @media screen and (max-width: 767px) {
+            height: 250px;
+          }
+
+          .project-hover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 767px) {
+              top: unset;
+              opacity: 1;
+            }
+
+            h3 {
+              margin: 0;
+              font-size: 42px;
+
+              @media screen and (max-width: 1024px) {
+                font-size: 32px;
+              }
+
+              @media screen and (max-width: 767px) {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.single-project {
+  .wrapper-container {
+    .project-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 0 0 40px;
+
+      .project-gallery-item {
+        flex: 0 1 calc(33.333% - 20px);
+        box-sizing: border-box;
+
+        @media (max-width: 767px) {
+          flex: 0 1 calc(50% - 20px);
+          min-width: auto;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}

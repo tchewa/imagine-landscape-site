@@ -148,6 +148,7 @@ function imaginelandscape_scripts()
 	wp_style_add_data('imaginelandscape-style', 'rtl', 'replace');
 
 	wp_enqueue_script('imaginelandscape-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('imaginelandscape-site', get_template_directory_uri() . '/js/site.js', array('jquery'), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -237,9 +238,9 @@ function register_project_cpt()
 		'labels' => $labels,
 		'public' => true,
 		'show_in_rest' => true,
-		'has_archive' => true,
+		'has_archive' => false,
 		'supports' => array('title', 'thumbnail', 'editor'),
-		'rewrite' => array('slug' => 'projects'),
+		'rewrite' => array('slug' => 'project'),
 		'menu_position' => 5,
 		'menu_icon' => 'dashicons-format-gallery', // Optional icon
 	));

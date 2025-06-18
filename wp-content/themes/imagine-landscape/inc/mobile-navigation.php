@@ -8,8 +8,11 @@
 	wp_nav_menu(array(
 		'theme_location' => 'primary',
 		'menu_class' => 'mobile-navigation-items',
-		'container' => false,
+		'container' => true,
 	));
 	?>
+	<div class="cta">
+		<a href="/contact-us"><button class="secondary">Contact Us</button></a>
+	</div>
 	<a class="mobile-nav-trigger"><span></span></a>
 </div>

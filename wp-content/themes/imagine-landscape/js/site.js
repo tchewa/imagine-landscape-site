@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.faq-question').forEach((item) => {
     item.addEventListener('click', () => {
+      console.log('clicked');
       const answer = document.getElementById(
         'faq-' + item.getAttribute('data-faq-id')
       );
@@ -56,29 +57,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  function replaceHelpBackgrounds() {
-    const helpTips = document.querySelectorAll('.nf-help');
-
-    helpTips.forEach(function (el) {
-      el.style.backgroundImage =
-        'url("<?php echo get_template_directory_uri(); ?>/images/icons/il-yelp-white.png")';
-      el.style.backgroundColor = 'transparent';
-      el.style.backgroundRepeat = 'no-repeat';
-      el.style.backgroundPosition = 'center center';
-      el.style.backgroundSize = 'contain';
-      el.style.width = '20px'; // adjust based on your image
-      el.style.height = '20px';
-      el.style.display = 'inline-block';
-      el.textContent = ''; // optional: remove text inside
-    });
-  }
-
-  // Run once at load
-  replaceHelpBackgrounds();
-
-  // Optionally, rerun if forms are dynamically reloaded
-  document.addEventListener('nfFormReady', replaceHelpBackgrounds);
 });

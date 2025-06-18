@@ -1,0 +1,20 @@
+<?php get_header(); ?>
+
+<div class="container single-project">
+	<div class="wrapper-container">
+		<h1 class="page-title text-center"><?php echo get_the_title(); ?></h1>
+		<?php
+		$images = get_field('project_gallery');
+		if ($images): ?>
+			<div class="project-gallery">
+				<?php foreach ($images as $image): ?>
+					<div class="project-gallery-item">
+						<img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php the_title(); ?> landscape image">
+					</div>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
+	</div>
+</div>
+
+<?php get_footer(); ?>

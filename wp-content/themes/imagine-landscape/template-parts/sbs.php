@@ -27,7 +27,7 @@ if ($sbs_image || $sbs_title || $sbs_copy): ?>
 				<?php if ($sbs_copy): ?>
 					<div class="sbs-copy"><?php echo wp_kses_post($sbs_copy); ?></div>
 				<?php endif; ?>
-				<?php if ($sbs_cta_text && $sbs_cta_link): ?>
+				<?php if ($sbs_cta_text): ?>
 					<div class="sbs-cta">
 						<a href="<?php echo esc_url($sbs_cta_link); ?>">
 							<button class="primary"><?php echo esc_html($sbs_cta_text); ?></button>
