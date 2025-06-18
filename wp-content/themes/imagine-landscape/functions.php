@@ -240,7 +240,7 @@ function register_project_cpt()
 		'show_in_rest' => true,
 		'has_archive' => false,
 		'supports' => array('title', 'thumbnail', 'editor'),
-		'rewrite' => array('slug' => 'project'),
+		'rewrite' => array('slug' => 'projects'),
 		'menu_position' => 5,
 		'menu_icon' => 'dashicons-format-gallery', // Optional icon
 	));
