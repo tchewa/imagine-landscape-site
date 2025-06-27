@@ -746,6 +746,10 @@ body {
   align-items: center;
 }
 
+.flex-end {
+  justify-content: flex-end;
+}
+
 .justify-content-center {
   justify-content: center;
 }
@@ -1453,8 +1457,21 @@ blockquote {
   margin: 0 0 40px;
 }
 
+.button-container {
+  gap: 10px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  .button-container {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+
 .faq-item {
   flex: 1 1 100%;
+}
+.faq-item:not(:last-child) {
   border-bottom: 2px solid var(--charcoal);
 }
 
@@ -1487,20 +1504,21 @@ blockquote {
     border-right: 2px solid var(--primary-green);
   }
 }
-.faq-question > p {
-  font-size: 1.5rem;
+.faq-question > * {
+  font-size: 1.5rem !important;
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 @media screen and (max-width: 1024px) {
-  .faq-question > p {
-    font-size: 1.8rem;
+  .faq-question > * {
+    font-size: 1.2rem !important;
   }
 }
 @media screen and (max-width: 767px) {
-  .faq-question > p {
-    font-size: 1.2rem;
+  .faq-question > * {
+    font-size: 16px !important;
+    max-width: 80%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1508,41 +1526,16 @@ blockquote {
     padding: 20px 10px;
   }
 }
-.faq-question h3 {
-  font-size: 2.2rem;
-}
-@media screen and (max-width: 1024px) {
-  .faq-question h3 {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (max-width: 767px) {
-  .faq-question h3 {
-    font-size: 1.2rem;
-    width: 15%;
-  }
-}
-.faq-question h4 {
-  font-size: 2rem;
-  margin-left: 5px;
-}
-@media screen and (max-width: 1024px) {
-  .faq-question h4 {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 767px) {
-  .faq-question h4 {
-    font-size: 1.2rem;
-    width: 80%;
-    padding: 0 10px 0 0;
-  }
-}
 
 .faq-answer {
   display: none;
   line-height: 1.6;
   padding: 10px;
+}
+@media screen and (max-width: 767px) {
+  .faq-answer * {
+    font-size: 16px !important;
+  }
 }
 .faq-answer.active {
   display: block;
@@ -1561,6 +1554,11 @@ blockquote {
   transform: rotate(135deg);
   position: relative;
   right: 10px;
+}
+@media screen and (max-width: 767px) {
+  .faq-toggle::after {
+    right: 0;
+  }
 }
 .faq-toggle.active {
   transform: rotate(-180deg);

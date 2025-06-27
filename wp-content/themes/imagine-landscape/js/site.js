@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Individual FAQ item toggle
   document.querySelectorAll('.faq-question').forEach((item) => {
     item.addEventListener('click', () => {
       const faqItem = item.closest('.faq-item');
@@ -36,25 +37,42 @@ document.addEventListener('DOMContentLoaded', function () {
       const toggle = item.querySelector('.faq-toggle');
       const isActive = item.classList.contains('active');
 
-      // Remove 'active' from all questions, toggles, and answers
-      document
-        .querySelectorAll('.faq-question')
-        .forEach((q) => q.classList.remove('active'));
-      document
-        .querySelectorAll('.faq-toggle')
-        .forEach((t) => t.classList.remove('active'));
-      document
-        .querySelectorAll('.faq-answer')
-        .forEach((a) => a.classList.remove('active'));
-
-      // If not already active, activate this one
-      if (!isActive) {
-        item.classList.add('active');
-        toggle.classList.add('active');
-        answer.classList.add('active');
-      }
+      // Toggle the clicked item
+      item.classList.toggle('active');
+      toggle.classList.toggle('active');
+      answer.classList.toggle('active');
     });
   });
+
+  // Open All button
+  const openAllBtn = document.querySelector('#open-all-btn');
+  if (openAllBtn) {
+    openAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.faq-question').forEach((item) => {
+        item.classList.add('active');
+        item.querySelector('.faq-toggle').classList.add('active');
+        item
+          .closest('.faq-item')
+          .querySelector('.faq-answer')
+          .classList.add('active');
+      });
+    });
+  }
+
+  // Close All button
+  const closeAllBtn = document.querySelector('#close-all-btn');
+  if (closeAllBtn) {
+    closeAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.faq-question').forEach((item) => {
+        item.classList.remove('active');
+        item.querySelector('.faq-toggle').classList.remove('active');
+        item
+          .closest('.faq-item')
+          .querySelector('.faq-answer')
+          .classList.remove('active');
+      });
+    });
+  }
 });
 
 // Back to Top button

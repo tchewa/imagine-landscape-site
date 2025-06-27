@@ -4,9 +4,22 @@
   margin: 0 0 40px;
 }
 
+.button-container {
+  gap: 10px;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 767px) {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+
 .faq-item {
   flex: 1 1 100%;
-  border-bottom: 2px solid var(--charcoal);
+
+  &:not(:last-child) {
+    border-bottom: 2px solid var(--charcoal);
+  }
 }
 
 .faq-question {
@@ -46,51 +59,24 @@
     }
   }
 
-  > p {
-    font-size: 1.5rem;
+  > * {
+    font-size: 1.5rem !important;
     margin: 0;
     font-family: 'Oswald', sans-serif;
-    font-weight: bold;
+    font-weight: bold !important;
 
     @media screen and (max-width: 1024px) {
-      font-size: 1.8rem;
+      font-size: 1.2rem !important;
     }
 
     @media screen and (max-width: 767px) {
-      font-size: 1.2rem;
+      font-size: 16px !important;
+      max-width: 80%;
     }
   }
 
   @media screen and (max-width: 767px) {
     padding: 20px 10px;
-  }
-
-  h3 {
-    font-size: 2.2rem;
-
-    @media screen and (max-width: 1024px) {
-      font-size: 1.8rem;
-    }
-
-    @media screen and (max-width: 767px) {
-      font-size: 1.2rem;
-      width: 15%;
-    }
-  }
-
-  h4 {
-    font-size: 2rem;
-    margin-left: 5px;
-
-    @media screen and (max-width: 1024px) {
-      font-size: 1.5rem;
-    }
-
-    @media screen and (max-width: 767px) {
-      font-size: 1.2rem;
-      width: 80%;
-      padding: 0 10px 0 0;
-    }
   }
 }
 
@@ -98,6 +84,12 @@
   display: none;
   line-height: 1.6;
   padding: 10px;
+
+  & * {
+    @media screen and (max-width: 767px) {
+      font-size: 16px !important;
+    }
+  }
 
   &.active {
     display: block;
@@ -117,6 +109,10 @@
     transform: rotate(135deg);
     position: relative;
     right: 10px;
+
+    @media screen and (max-width: 767px) {
+      right: 0;
+    }
   }
 
   &.active {
