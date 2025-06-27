@@ -41,6 +41,10 @@
         border-right: 2px solid var(--primary-green);
         right: -10px;
         top: -5px;
+
+        @media screen and (max-width: 767px) {
+          right: 0;
+        }
       }
     }
   }

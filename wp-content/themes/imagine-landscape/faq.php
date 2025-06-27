@@ -10,6 +10,8 @@ get_header();
 			<button id="open-all-btn" class="primary">Open All</button>
 			<button id="close-all-btn" class="primary">Close All</button>
 		</div>
+		<button class="back-to-top" title="Back to Top"><span></span></button>
+
 	</div>
 </div>
 <?php

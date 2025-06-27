@@ -1494,6 +1494,11 @@ blockquote {
   right: -10px;
   top: -5px;
 }
+@media screen and (max-width: 767px) {
+  .faq-question.active .faq-toggle::after {
+    right: 0;
+  }
+}
 @media screen and (min-width: 767px) {
   .faq-question:hover {
     background: var(--charcoal);
