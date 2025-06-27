@@ -25,7 +25,7 @@ if (have_rows('flexible_content')):
 		elseif (get_row_layout() == 'testimonial'):
 			get_template_part('template-parts/testimonial');
 		elseif (get_row_layout() == 'faq'):
-			get_template_part('template-parts/faq');
+			get_template_part('template-parts/faq-item');
 		endif;
 	endwhile;
 endif;

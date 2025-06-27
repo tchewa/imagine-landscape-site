@@ -8,12 +8,11 @@
 		if ($images): ?>
 			<div class="project-gallery">
 				<?php foreach ($images as $image): ?>
-					<div class="project-gallery-item">
-						<img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php the_title(); ?> landscape image">
-					</div>
+					<img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php the_title(); ?> landscape image">
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
+		<button class="back-to-top" title="Back to Top"><span></span></button>
 	</div>
 </div>
 

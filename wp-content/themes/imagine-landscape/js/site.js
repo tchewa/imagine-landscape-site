@@ -31,14 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.faq-question').forEach((item) => {
     item.addEventListener('click', () => {
-      console.log('clicked');
-      const answer = document.getElementById(
-        'faq-' + item.getAttribute('data-faq-id')
-      );
+      const faqItem = item.closest('.faq-item');
+      const answer = faqItem.querySelector('.faq-answer');
       const toggle = item.querySelector('.faq-toggle');
       const isActive = item.classList.contains('active');
 
-      // Remove 'active' from all questions and answers
+      // Remove 'active' from all questions, toggles, and answers
       document
         .querySelectorAll('.faq-question')
         .forEach((q) => q.classList.remove('active'));
@@ -55,6 +53,27 @@ document.addEventListener('DOMContentLoaded', function () {
         toggle.classList.add('active');
         answer.classList.add('active');
       }
+    });
+  });
+});
+
+// Back to Top button
+document.addEventListener('DOMContentLoaded', function () {
+  const backToTopButton = document.querySelector('.back-to-top');
+
+  if (!backToTopButton) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add('show');
+    } else {
+      backToTopButton.classList.remove('show');
+    }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
     });
   });
 });

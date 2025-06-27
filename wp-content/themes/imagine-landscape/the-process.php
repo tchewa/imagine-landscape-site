@@ -15,8 +15,6 @@ get_header();
 					get_template_part('template-parts/sbs');
 				elseif (get_row_layout() == 'cta'):
 					get_template_part('template-parts/cta');
-				elseif (get_row_layout() == 'faq'):
-					get_template_part('template-parts/faq');
 				endif;
 			endwhile;
 		else:

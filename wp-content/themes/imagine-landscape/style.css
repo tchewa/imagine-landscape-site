@@ -828,6 +828,49 @@ button.tertiary:hover {
   border: 5px solid var(--charcoal);
 }
 
+/* Back to Top button styles */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--charcoal);
+  color: var(--primary-green);
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.back-to-top span {
+  border-top: 3px solid var(--primary-green);
+  border-left: 3px solid var(--primary-green);
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  position: relative;
+  top: 3px;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-green);
+  transform: scale(1.1);
+  color: var(--charcoal);
+}
+.back-to-top:hover span {
+  border-top: 3px solid var(--charcoal);
+  border-left: 3px solid var(--charcoal);
+}
+
+.back-to-top.show {
+  display: flex;
+  opacity: 1;
+}
+
 /*--------------------------------------------------------------
 ## Columns
 --------------------------------------------------------------*/
@@ -1407,19 +1450,16 @@ blockquote {
 .faq-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 40px 0 40px;
+  margin: 0 0 40px;
 }
 
 .faq-item {
   flex: 1 1 100%;
   border-bottom: 2px solid var(--charcoal);
 }
-.faq-item:last-child {
-  border-bottom: none;
-}
 
 .faq-question {
-  padding: 30px 30px 30px 20px;
+  padding: 10px 10px;
   cursor: pointer;
   font-weight: bold;
   display: flex;
@@ -1434,6 +1474,8 @@ blockquote {
 .faq-question.active .faq-toggle::after {
   border-top: 2px solid var(--primary-green);
   border-right: 2px solid var(--primary-green);
+  right: -10px;
+  top: -5px;
 }
 @media screen and (min-width: 767px) {
   .faq-question:hover {
@@ -1446,7 +1488,7 @@ blockquote {
   }
 }
 .faq-question > p {
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   margin: 0;
   font-family: "Oswald", sans-serif;
   font-weight: bold;
@@ -1500,27 +1542,10 @@ blockquote {
 .faq-answer {
   display: none;
   line-height: 1.6;
+  padding: 10px;
 }
 .faq-answer.active {
   display: block;
-}
-
-.faq-answer-complex {
-  display: flex;
-}
-.faq-answer-complex .faq-image-container,
-.faq-answer-complex .faq-answer-text {
-  width: 50%;
-}
-.faq-answer-complex .faq-image-container img,
-.faq-answer-complex .faq-answer-text img {
-  max-height: 400px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-}
-.faq-answer-complex .faq-answer-text {
-  padding: 20px;
 }
 
 .faq-toggle {
@@ -1534,6 +1559,8 @@ blockquote {
   border-top: 2px solid var(--charcoal);
   border-right: 2px solid var(--charcoal);
   transform: rotate(135deg);
+  position: relative;
+  right: 10px;
 }
 .faq-toggle.active {
   transform: rotate(-180deg);
@@ -1544,29 +1571,6 @@ blockquote {
     width: 5%;
     justify-content: flex-start;
   }
-}
-
-.faq-item:nth-child(odd) .complex-image {
-  order: 1;
-}
-
-.faq-item:nth-child(odd) .complex-answer {
-  order: 2;
-}
-
-.faq-item:nth-child(even) .faq-image-container {
-  order: 2;
-}
-.faq-item:nth-child(even) .faq-answer-text {
-  padding: 20px 20px 0 0;
-}
-
-.faq-item:nth-child(even) .complex-answer {
-  order: 1;
-}
-
-.faq-answer-simple {
-  padding: 20px;
 }
 
 /*--------------------------------------------------------------

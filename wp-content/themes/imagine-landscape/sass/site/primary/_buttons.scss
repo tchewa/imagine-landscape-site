@@ -63,3 +63,48 @@ button {
     }
   }
 }
+
+/* Back to Top button styles */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--charcoal);
+  color: var(--primary-green);
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s, transform 0.3s;
+
+  span {
+    border-top: 3px solid var(--primary-green);
+    border-left: 3px solid var(--primary-green);
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 3px;
+  }
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-green);
+  transform: scale(1.1);
+  color: var(--charcoal);
+
+  span {
+    border-top: 3px solid var(--charcoal);
+    border-left: 3px solid var(--charcoal);
+  }
+}
+
+.back-to-top.show {
+  display: flex;
+  opacity: 1;
+}
