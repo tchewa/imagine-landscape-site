@@ -1476,7 +1476,7 @@ blockquote {
 }
 
 .faq-question {
-  padding: 10px 10px;
+  padding: 20px;
   cursor: pointer;
   font-weight: bold;
   display: flex;
@@ -1491,7 +1491,6 @@ blockquote {
 .faq-question.active .faq-toggle::after {
   border-top: 2px solid var(--primary-green);
   border-right: 2px solid var(--primary-green);
-  right: -10px;
   top: -5px;
 }
 @media screen and (max-width: 767px) {
@@ -1558,7 +1557,6 @@ blockquote {
   border-right: 2px solid var(--charcoal);
   transform: rotate(135deg);
   position: relative;
-  right: 10px;
 }
 @media screen and (max-width: 767px) {
   .faq-toggle::after {

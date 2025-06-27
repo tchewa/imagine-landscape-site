@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
     openAllBtn.addEventListener('click', () => {
       document.querySelectorAll('.faq-question').forEach((item) => {
         item.classList.add('active');
-        item.querySelector('.faq-toggle').classList.add('active');
         item
           .closest('.faq-item')
           .querySelector('.faq-answer')
