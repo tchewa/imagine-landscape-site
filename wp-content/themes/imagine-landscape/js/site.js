@@ -29,48 +29,64 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Individual FAQ item toggle
-  document.querySelectorAll('.faq-question').forEach((item) => {
-    item.addEventListener('click', () => {
-      const faqItem = item.closest('.faq-item');
-      const answer = faqItem.querySelector('.faq-answer');
-      const toggle = item.querySelector('.faq-toggle');
-      const isActive = item.classList.contains('active');
+  console.log('DOM fully loaded');
 
-      // Toggle the clicked item
-      item.classList.toggle('active');
-      toggle.classList.toggle('active');
-      answer.classList.toggle('active');
-    });
+  document.body.addEventListener('click', (event) => {
+    const item = event.target.closest('.faq-question');
+    if (item) {
+      console.log('FAQ question clicked:', item);
+      const faqItem = item.closest('.faq-item');
+      const answer = faqItem?.querySelector('.faq-answer');
+      const toggle = item.querySelector('.faq-toggle');
+
+      if (faqItem && answer && toggle) {
+        item.classList.toggle('active');
+        toggle.classList.toggle('active');
+        answer.classList.toggle('active');
+      } else {
+        console.error('FAQ structure incomplete:', { faqItem, answer, toggle });
+      }
+    }
   });
 
-  // Open All button
   const openAllBtn = document.querySelector('#open-all-btn');
   if (openAllBtn) {
+    console.log('Open All button found');
     openAllBtn.addEventListener('click', () => {
+      console.log('Open All clicked');
       document.querySelectorAll('.faq-question').forEach((item) => {
-        item.classList.add('active');
-        item
-          .closest('.faq-item')
-          .querySelector('.faq-answer')
-          .classList.add('active');
+        const faqItem = item.closest('.faq-item');
+        const answer = faqItem?.querySelector('.faq-answer');
+        const toggle = item.querySelector('.faq-toggle');
+        if (faqItem && answer && toggle) {
+          item.classList.add('active');
+          toggle.classList.add('active');
+          answer.classList.add('active');
+        }
       });
     });
+  } else {
+    console.warn('Open All button not found');
   }
 
-  // Close All button
   const closeAllBtn = document.querySelector('#close-all-btn');
   if (closeAllBtn) {
+    console.log('Close All button found');
     closeAllBtn.addEventListener('click', () => {
+      console.log('Close All clicked');
       document.querySelectorAll('.faq-question').forEach((item) => {
-        item.classList.remove('active');
-        item.querySelector('.faq-toggle').classList.remove('active');
-        item
-          .closest('.faq-item')
-          .querySelector('.faq-answer')
-          .classList.remove('active');
+        const faqItem = item.closest('.faq-item');
+        const answer = faqItem?.querySelector('.faq-answer');
+        const toggle = item.querySelector('.faq-toggle');
+        if (faqItem && answer && toggle) {
+          item.classList.remove('active');
+          toggle.classList.remove('active');
+          answer.classList.remove('active');
+        }
       });
     });
+  } else {
+    console.warn('Close All button not found');
   }
 });
 
