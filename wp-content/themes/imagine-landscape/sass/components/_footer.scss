@@ -17,10 +17,22 @@
     @media screen and (min-width: 767px) {
       display: block;
     }
+
+    .column-container {
+      .column {
+        justify-content: space-between;
+      }
+    }
   }
 
   .mobile-footer {
     display: block;
+
+    .column-container {
+      .column {
+        justify-content: space-between;
+      }
+    }
 
     @media screen and (min-width: 767px) {
       display: none;

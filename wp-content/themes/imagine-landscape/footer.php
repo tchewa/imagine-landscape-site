@@ -25,21 +25,21 @@
 						?>
 					</div>
 					<div class="social-media-links">
-						<a class="desktop-link" href="">
+						<a class="desktop-link" href="http://www.instagram.com/landscapeimagine" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-instagram-green.png"
 								alt="instagram Logo">
 							<img class="show-on-hover"
 								src="<?php echo get_template_directory_uri(); ?>/images/icons/il-instagram-white.png"
 								alt="instagram Logo">
 						</a>
-						<a class="desktop-link" href="">
+						<a class="desktop-link" href="http://www.facebook.com/imaginelandscapeut" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-facebook-green.png"
 								alt="facebook Logo">
 							<img class="show-on-hover"
 								src="<?php echo get_template_directory_uri(); ?>/images/icons/il-facebook-white.png"
 								alt="facebook Logo">
 						</a>
-						<a class="desktop-link" href="">
+						<a class="desktop-link" href="https://www.yelp.com/biz/imagine-landscape-salt-lake-city" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-yelp-green.png" alt="yelp Logo">
 							<img class="show-on-hover"
 								src="<?php echo get_template_directory_uri(); ?>/images/icons/il-yelp-white.png" alt="yelp Logo">
@@ -84,21 +84,21 @@
 						?>
 					</div>
 					<div class="social-media-links">
-						<a href="#">
+						<a href="http://www.instagram.com/landscapeimagine" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-instagram-green.png"
 								alt="instagram Logo">
 						</a>
-						<a href="#">
+						<a href="http://www.facebook.com/imaginelandscapeut" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-facebook-green.png"
 								alt="facebook Logo">
 						</a>
-						<a href="#">
+						<a href="https://www.yelp.com/biz/imagine-landscape-salt-lake-city" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/il-yelp-green.png" alt="yelp Logo">
 						</a>
-						<a href="#">
+						<a href="tel:8018952006">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/phone-icon-green.png" alt="phone icon">
 						</a>
-						<a href="#">
+						<a href="mailto:info@Imagine-Landscape.com">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/icons/email-icon-green.png" alt="yelp Logo">
 						</a>
 					</div>

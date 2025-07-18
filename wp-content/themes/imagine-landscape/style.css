@@ -1161,6 +1161,9 @@ button.tertiary:hover {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
   position: relative;
 }
+.site-header .wrapper-container {
+  padding: 10px 20px;
+}
 
 /*--------------------------------------------------------------
 # CTA
@@ -1846,8 +1849,14 @@ blockquote {
     display: block;
   }
 }
+.site-footer .desktop-footer .column-container .column {
+  justify-content: space-between;
+}
 .site-footer .mobile-footer {
   display: block;
+}
+.site-footer .mobile-footer .column-container .column {
+  justify-content: space-between;
 }
 @media screen and (min-width: 767px) {
   .site-footer .mobile-footer {
