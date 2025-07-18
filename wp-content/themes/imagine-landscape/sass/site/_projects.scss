@@ -101,7 +101,6 @@
       .project-gallery-item {
         width: calc(50% - 20px);
         box-sizing: border-box;
-        height: fit-content;
 
         @media (max-width: 767px) {
           width: 100%;
