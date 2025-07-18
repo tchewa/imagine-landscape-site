@@ -1139,23 +1139,18 @@ button.tertiary:hover {
 .single-project .wrapper-container .project-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   padding: 0 0 40px;
 }
 .single-project .wrapper-container .project-gallery .project-gallery-item {
-  flex: 0 1 calc(33.333% - 20px);
+  width: calc(50% - 20px);
   box-sizing: border-box;
+  height: fit-content;
 }
 @media (max-width: 767px) {
   .single-project .wrapper-container .project-gallery .project-gallery-item {
-    flex: 0 1 calc(50% - 20px);
-    min-width: auto;
+    width: 100%;
   }
-}
-.single-project .wrapper-container .project-gallery .project-gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 /*--------------------------------------------------------------

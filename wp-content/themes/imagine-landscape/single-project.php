@@ -8,7 +8,8 @@
 		if ($images): ?>
 			<div class="project-gallery">
 				<?php foreach ($images as $image): ?>
-					<img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php the_title(); ?> landscape image">
+					<img class="project-gallery-item" src="<?php echo esc_url($image['sizes']['large']); ?>"
+						alt="<?php the_title(); ?> landscape image">
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
